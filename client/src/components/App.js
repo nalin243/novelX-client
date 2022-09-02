@@ -14,7 +14,7 @@ function App(props){
 
 	return (
 		<div class="flex flex-wrap flex-col min-h-screen min-w-screen justify-center">
-			<Navbar name={props.name}/>
+			<Navbar updateDisplay={updateDisplayItem} name={props.name}/>
 			<div class="flex flex-row mt-auto mb-auto h-screen">
 				<LeftCard display={displayItem}/>
 				<ProfileNavigationCard updateDisplay={updateDisplayItem} username={"nalin"}/>
