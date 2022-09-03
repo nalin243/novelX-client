@@ -17,8 +17,8 @@ function LeftCard(props){
 		cards.push(<BookCard libraryModal={true} idno={i} imagesrc="https://img.webnovel.com/bookcover/11530348105422805/300/300.jpg?updateTime=1562664192135" bookname="My House of Horrors"/>)
 	}
 	
-	childComponents.set("My Library",(<Library leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} cards={cards} />))
-	childComponents.set("My Profile",(<MyProfile leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation}/>))
+	childComponents.set("MyLibrary",(<Library leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} cards={cards} />))
+	childComponents.set("MyProfile",(<MyProfile leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation}/>))
 	childComponents.set("Search Area",(<SearchArea leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} searchText={props.searchText}/>))
 
 	return (
