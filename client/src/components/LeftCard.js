@@ -1,13 +1,21 @@
 
-import MyLibrary from './LeftCardChildComponents/MyLibrary'
+import Library from './LeftCardChildComponents/Library'
 import MyProfile from './LeftCardChildComponents/MyProfile'
 import SearchArea from './LeftCardChildComponents/SearchArea'
+
+import BookCard from './LeftCardChildComponents/LibraryChildComponents/BookCard'
 
 function LeftCard(props){
 
 	const childComponents = new Map()
+
+	const cards = []
+
+	for(let i=0;i<3;i++){
+		cards.push(<BookCard idno={i} imagesrc="https://img.webnovel.com/bookcover/11530348105422805/300/300.jpg?updateTime=1562664192135" bookname="My House of Horrors"/>)
+	}
 	
-	childComponents.set("My Library",(<MyLibrary/>))
+	childComponents.set("My Library",(<Library cards={cards} />))
 	childComponents.set("My Profile",(<MyProfile/>))
 	childComponents.set("Search Area",(<SearchArea searchText={props.searchText}/>))
 
