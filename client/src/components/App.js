@@ -5,6 +5,7 @@ import ProfileNavigationCard from './ProfileNavigationCard'
 import LeftCard from './LeftCard'
 
 import {useState} from "react"
+import {motion} from 'framer-motion'
 
 function App(props){
 
@@ -13,12 +14,14 @@ function App(props){
 	const [displayItem,updateDisplayItem] = useState("")
 	const [searchText,updateSearchText] = useState("")
 
+	const[leftCardAnimation,updateLeftCardAnimation] = useState("")
+
 	return (
 		<div class="flex flex-wrap flex-col min-h-screen min-w-screen justify-center">
 			<Navbar updateSearch={updateSearchText} updateDisplay={updateDisplayItem} name={props.name}/>
 			<div class="flex flex-row mt-auto mb-auto h-screen">
-				<LeftCard searchText={searchText} display={displayItem}/>
-				<ProfileNavigationCard updateDisplay={updateDisplayItem} username={"nalin"}/>
+				<LeftCard leftCardAnimation={leftCardAnimation} updateLeftCardAnimation={updateLeftCardAnimation} searchText={searchText} display={displayItem}/>
+				<ProfileNavigationCard  updateLeftCardAnimation={updateLeftCardAnimation} updateDisplay={updateDisplayItem} username={"nalin"}/>
 			</div>
 			<Footer name={props.name}/>
 		</div>

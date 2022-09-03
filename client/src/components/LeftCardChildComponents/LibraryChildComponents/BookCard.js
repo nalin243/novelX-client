@@ -1,13 +1,26 @@
-import BookCardModal from "./BookCardModal"
+import Modal from "./Modal"
+
+import {useState} from 'react'
+
 function BookCard(props){
+
+	const [modalAnimation,updateAnimation] = useState(0)
+
+	console.log(props.libraryModal)
 
 	return (
 		<div class="block h-3/6 xl:basis-2/12 m-3 md:basis-4/12 rounded-lg border-2 border-slate-300 shadow-lg drop-shadow-xl">
 				<div class="flex flex-col text-center justify-center h-full w-inherit">
-				<BookCardModal idno={props.idno}/>
+				{
+					<Modal libraryModal={props.libraryModal} updateAnimation={updateAnimation} modalAnimation={modalAnimation} idno={props.idno}/>
+				}
 				<div class="flex flex-col text-center justify-center h-full w-inherit">
 				<img onClick={(event)=>{
-				document.querySelector("#book-modal"+props.idno).classList.remove("hidden")
+				// document.querySelector("#book-modal"+props.idno).classList.remove("hidden")
+				updateAnimation({
+					scale:[0,1,1.1,1,1],
+					opacity:1
+				})
 				}}  class="hover:cursor-pointer h-5/6 w-5/6 ml-auto mr-auto rounded-3xl" src={props.imagesrc} />
 				<h4 class="mt-1 text-white font-serif">{props.bookname}</h4>
 				</div>
