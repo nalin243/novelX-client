@@ -4,9 +4,12 @@ import {useState} from 'react'
 
 function BookCard(props){
 
-	const [modalAnimation,updateAnimation] = useState(0)
+	const [modalAnimation,updateAnimation] = useState({
+		opacity:0,
+		scale: 0.1,
+	})
 
-	console.log(props.libraryModal)
+	//console.log(props.libraryModal)
 
 	return (
 		<div class="block h-3/6 xl:basis-2/12 m-3 md:basis-4/12 rounded-lg border-2 border-slate-300 shadow-lg drop-shadow-xl">
@@ -15,7 +18,7 @@ function BookCard(props){
 					<Modal libraryModal={props.libraryModal} updateAnimation={updateAnimation} modalAnimation={modalAnimation} idno={props.idno}/>
 				}
 				<div class="flex flex-col text-center justify-center h-full w-inherit">
-				<img onClick={(event)=>{
+				<img onClick={()=>{
 				// document.querySelector("#book-modal"+props.idno).classList.remove("hidden")
 				updateAnimation({
 					scale:[0,1,1.1,1,1],
