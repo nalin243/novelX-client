@@ -1,29 +1,19 @@
-import Navbar from './Navbar'
-import Footer from './Footer'
+import About from "./routeComponents/About"
+import Contact from "./routeComponents/Contact"
 
-import ProfileNavigationCard from './ProfileNavigationCard'
-import LeftCard from './LeftCard'
+import Home from "./Home"
 
-import {useState} from "react"
-import {motion} from 'framer-motion'
+import {Route,Routes} from "react-router-dom"
 
 function App(props){
 
-	//useState here is a hook meaning it let's us 'hook' into special react features
-	
-	const [displayItem,updateDisplayItem] = useState("")
-	const [searchResult,updateSearchResult] = useState("")
-
-	const[leftCardAnimation,updateLeftCardAnimation] = useState("")
-
 	return (
 		<div class="flex flex-wrap flex-col min-h-screen min-w-screen justify-center">
-			<Navbar updateLeftCardAnimation={updateLeftCardAnimation} updateSearchResult={updateSearchResult} updateDisplay={updateDisplayItem} name={props.name}/>
-			<div class="flex flex-row mt-auto mb-auto h-screen">
-				<LeftCard leftCardAnimation={leftCardAnimation} updateLeftCardAnimation={updateLeftCardAnimation} searchResult={searchResult} display={displayItem}/>
-				<ProfileNavigationCard  updateLeftCardAnimation={updateLeftCardAnimation} updateDisplay={updateDisplayItem} username={"nalin"}/>
-			</div>
-			<Footer name={props.name}/>
+			<Routes>
+				<Route path="/" element={<Home name={props.name}/>}/>
+				<Route path="about" element={<About name={props.name}/>}/>
+				<Route path="contact" element={<Contact name={props.name}/>}/>
+			</Routes>	
 		</div>
 	)
 }

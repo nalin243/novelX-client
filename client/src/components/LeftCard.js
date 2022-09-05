@@ -1,4 +1,7 @@
 
+import axios from "axios"
+import {useEffect} from "react"
+
 import Library from './LeftCardChildComponents/Library'
 import MyProfile from './LeftCardChildComponents/MyProfile'
 import SearchArea from './LeftCardChildComponents/SearchArea'
@@ -14,7 +17,7 @@ function LeftCard(props){
 	for(let i=0;i<3;i++){
 		cards.push(<BookCard libraryModal={true} idno={i} imagesrc="https://img.webnovel.com/bookcover/11530348105422805/300/300.jpg?updateTime=1562664192135" bookname="My House of Horrors"/>)
 	}
-	
+
 	childComponents.set("MyLibrary",(<Library leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} cards={cards} />))
 	childComponents.set("MyProfile",(<MyProfile leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation}/>))
 	childComponents.set("Search Area",(<SearchArea leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} searchResult={props.searchResult}/>))

@@ -1,8 +1,17 @@
+
+//STARTED ON 31st AUGUST
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './components/App'
 
+import {BrowserRouter} from "react-router-dom"
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<App name="NovelX"/>)
+root.render(
+	<BrowserRouter>
+		<App name="NovelX"/>
+	</BrowserRouter>
+	)
