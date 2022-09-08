@@ -1,9 +1,18 @@
 import {motion} from "framer-motion"
 import {useState,useEffect} from "react"
 
+import {useNavigate} from "react-router-dom"
+
 import axios from "axios"
+axios.defaults.withCredentials=true
 
 function ProfileNavigationListItem(props){
+
+	const navigate = useNavigate()
+
+	function goTo(path){
+		navigate(path)
+	}
 
 	const [navAnimation,updateNavAnimation] = useState({
 					y:0,
@@ -30,6 +39,12 @@ function ProfileNavigationListItem(props){
 			}
 		}
 		onClick={()=>{
+			if(props.id === "SignOut"){
+				axios.get("http://localhost:3001/signout").then((response)=>{
+					if(response.data.status)
+						goTo("/authcheck")
+				})
+			}
 			document.querySelector("#"+props.id).classList.remove("hover:shadow-orange-500")
 			document.querySelector("#"+props.id).classList.add("hover:shadow-green-500")
 			props.updateDisplay(props.content)
