@@ -20,7 +20,7 @@ function Library(props){
 				scale:{duration:0.6},
 				type:"spring"
 			}
-		} class="flex flex-wrap overflow-y-auto justify-left h-inherit w-full m-10">
+		} class="flex flex-wrap  justify-left h-inherit w-full m-10">
 			{
 				props.cards.map((card)=>{
 					return card

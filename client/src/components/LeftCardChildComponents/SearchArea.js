@@ -6,10 +6,18 @@ import {motion} from "framer-motion"
 
 function SearchArea(props){
 
-	const cards = []
+	const searchResult = props.searchResult.items
+	const cards = []	
 
-	for(let i=0;i<3;i++){
-		cards.push(<BookCard libraryModal={false} idno={i} imagesrc="https://img.webnovel.com/bookcover/11022733006234505/600/600.jpg?coverUpdateTime=1618827991884&imageMogr2/quality/40" bookname="Lord of mysteries"/>)
+	if(searchResult!==undefined){
+		for(let i=0;i<searchResult.length;i++){
+			try{
+				cards.push(<BookCard libraryModal={false} idno={i} imagesrc={((searchResult[i].volumeInfo).imageLinks).smallThumbnail} bookname={searchResult[i].volumeInfo.title} />)
+			}
+			catch(error){
+				cards.push(<BookCard libraryModal={false} idno={i} imagesrc={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ_qQAlRv5ygvOfyRvSdF7QLsRsubnYqsnCSBasaNznTbz1bFM7ZjO4D9mi_4FwE8Dwz0&usqp=CAU"} bookname={searchResult[i].volumeInfo.title} />)
+			}
+		}
 	}
 
 	return (

@@ -10,7 +10,7 @@ function ProfileNavigationCard(props){
 		listitems.push(<ProfileNavigationListItem updateLeftCardAnimation={props.updateLeftCardAnimation} iconsrc={imgsrcs[i]} updateDisplay={props.updateDisplay}id={contents[i]} content={contents[i]}/>)
 	}
 	return (
-		<div  class="lg:flex-2 flex-1 h-4/6 md:h-4/6 xl:h-4/6 mb-10 w-1/5 ml-auto ml-1 mr-6 mt-12 rounded rounded-lg overflow-y-auto w-full lg:block lg:w-auto border-2 border-gray-300 shadow-slate-700 shadow-2xl drop-shadow-3xl">
+		<div  class="lg:flex-2 flex-1 h-4/6 md:h-4/6 xl:h-5/6 mb-10 w-1/5 ml-auto ml-1 mr-6 mt-12 rounded rounded-lg overflow-y-auto w-full lg:block lg:w-auto border-2 border-gray-300 shadow-slate-700 shadow-2xl drop-shadow-3xl">
 			{/*<div class="m-40">
 			</div>*/}
 
