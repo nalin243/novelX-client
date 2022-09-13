@@ -23,7 +23,29 @@ function Navbar(props){
           <a id="contact" href="#" class="block py-2 pr-4 pl-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
         </li>
         <div class="flex">
-        <input id="search-bar" class="rounded-md  p-1" />
+        <input id="search-bar" class="rounded-md  p-1" onKeyPress={(event)=>{
+          if(event.key=="Enter"){
+            //CODE FOR SEARCHING ONCLICK STUFF
+          props.updateDisplay("Search Area")
+          props.updateLeftCardAnimation({
+            opacity:[0,1]
+          })
+
+          const searchResult = (document.querySelector("#search-bar").value).split(" ").join("+")
+
+          if(searchResult!==""){
+
+            fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchResult}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
+              .then((response)=>response.json())
+              .then((data)=>props.updateSearchResult(data))
+          }
+          else
+            alert("Type something you moron...")
+          
+          document.querySelector("#search-bar").value = ""//clean up search bar after search
+          props.updateSearchResult("")//clean up searchText after search
+          }
+        }} />
         <div class="flex bg-white rounded-full items-center px-1 ml-2">
         <img onClick={()=>{
           //CODE FOR SEARCHING ONCLICK STUFF

@@ -1,6 +1,6 @@
 function LibraryModal(props) {
 	return (
-		<div class="flex flex-col w-full h-full p-2 opacity-full bg-white rounded-lg">
+		<div onMouseLeave={()=>props.updateAnimation("")} class="flex flex-col w-full h-full p-2 opacity-full bg-white rounded-lg">
 		    <div onClick={()=>{
 		    	// document.querySelector("#book-modal"+props.idno).classList.add("hidden")
 		    	props.updateAnimation("")
