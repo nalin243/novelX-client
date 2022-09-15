@@ -17,21 +17,11 @@ function Signup(props){
 	const username = document.querySelector("#username").value
 	const password = document.querySelector("#password").value
 
-	axios.post("http://localhost:3001/auth",{username:username,password:password})
+	axios.post("http://localhost:3001/signup",{username:username,password:password})
 		.then((response)=>{
-			if(response.data.user !== undefined){
-				console.log(response)
-				console.log("goooo")
-				goTo("/home?user="+response.data.user.name)
+			if(response.data.status === 200){
+				goTo("/login")
 			}
-		})
-		.catch((err)=>{
-			if(err.response !==undefined){
-			if(err.response.status === 401){
-				console.log(err)
-				alert("Wrong password")
-			}
-		}
 		})
 	}
 
