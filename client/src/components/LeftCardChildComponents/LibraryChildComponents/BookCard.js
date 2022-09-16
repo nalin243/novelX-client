@@ -15,7 +15,7 @@ function BookCard(props){
 		<div class="block h-3/6 bg-gray-300 xl:basis-2/12 m-3 md:basis-4/12 rounded-lg border-2 border-slate-300 shadow-lg drop-shadow-xl">
 				<div class="flex flex-col text-center justify-center h-full w-inherit">
 				{
-					<Modal searchResult={props.searchResult} libraryModal={props.libraryModal} updateAnimation={updateAnimation} modalAnimation={modalAnimation} idno={props.idno}/>
+					<Modal bookname={props.bookname} searchResult={props.searchResult} libraryModal={props.libraryModal} updateAnimation={updateAnimation} modalAnimation={modalAnimation} idno={props.idno}/>
 				}
 				<div class="flex flex-col text-center justify-center h-full w-inherit rounded-xl border-2 border-red-500">
 				

@@ -22,7 +22,7 @@ function Modal (props){
 				default: {type:"tween"}
 			}
 		} id={"book-modal"+props.idno} tabIndex="-1" class="absolute inset-0 z-10 -m-3">
-		{props.libraryModal ? <LibraryModal updateAnimation={props.updateAnimation}/> : <SearchModal searchResult={props.searchResult} updateAnimation={props.updateAnimation}/>  }
+		{props.libraryModal ? <LibraryModal bookname={props.bookname} updateAnimation={props.updateAnimation}/> : <SearchModal searchResult={props.searchResult} updateAnimation={props.updateAnimation}/>  }
 		</motion.div>
 		)
 }

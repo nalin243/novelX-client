@@ -16,6 +16,13 @@ function LibraryModal(props) {
 		})
 	}
 
+	function handleDelete(){
+		const query = new URLSearchParams("?"+(window.location.href).split('?')[1])
+		const username = query.get("user")
+
+		axios.post("http://localhost:3001/deletebook",{username: username,bookname: props.bookname})
+	}
+
 	return (
 		<div onMouseLeave={()=>props.updateAnimation("")} class="flex flex-col w-full h-full p-2 opacity-full bg-white rounded-lg">
 		    <div onClick={()=>{
@@ -27,7 +34,7 @@ function LibraryModal(props) {
 		    <label class="block hover:cursor-pointer hover:underline ml-auto mr-auto font-bold font-sans mt-4">Update Book</label>
 		    <input id="libmodalname" placeholder="Change name" class="block border-2 overflow-x-scroll overflow-y-scroll border-slate-900 text-black bg-white hover:cursor-pointer ml-auto mr-auto bg-black rounded-lg mt-3 h-1/6 w-11/12"/>
 		    <button onClick={handleUpdate} class="font-bold hover:translate-y-1  basis-1/12 w-1/2 ml-auto mr-auto bg-green-500 px-3 py-1 rounded-lg mt-7">Update</button>
-		    <button class="font-bold hover:translate-y-1  basis-1/12 w-1/2 ml-auto mr-auto bg-red-500 px-3 py-1 rounded-lg mt-2">Delete</button>
+		    <button onClick={handleDelete} class="font-bold hover:translate-y-1  basis-1/12 w-1/2 ml-auto mr-auto bg-red-500 px-3 py-1 rounded-lg mt-2">Delete</button>
 		</div>
 		)
 }
