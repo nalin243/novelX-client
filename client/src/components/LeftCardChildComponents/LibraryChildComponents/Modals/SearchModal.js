@@ -12,6 +12,7 @@ function SearchModal(props) {
 		bookDetails.set("author",(searchResult.volumeInfo.authors)[0])
 		bookDetails.set("pageCount",searchResult.volumeInfo.pageCount)
 		bookDetails.set("description",searchResult.volumeInfo.description)
+		bookDetails.set("cover",((searchResult.volumeInfo).imageLinks).smallThumbnail)
 	}
 	catch(error){
 		console.log(error)
@@ -21,7 +22,8 @@ function SearchModal(props) {
 		name: bookDetails.get("title"),
 		Pages: bookDetails.get("pageCount"),
 		Author: bookDetails.get("author"),
-		Description: bookDetails.get("description")
+		Description: bookDetails.get("description"),
+		Cover: bookDetails.get("cover")
 	}
 
 	function addToLibrary(Book){
