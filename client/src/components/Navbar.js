@@ -33,11 +33,15 @@ function Navbar(props){
 
           const searchResult = (document.querySelector("#search-bar").value).split(" ").join("+")
 
-          if(searchResult!==""){
+          props.updateSearchLoading(true)
 
+          if(searchResult!==""){
             fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchResult}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
               .then((response)=>response.json())
-              .then((data)=>props.updateSearchResult(data))
+              .then((data)=>{
+                props.updateSearchResult(data)
+                props.updateSearchLoading(false)
+               })
           }
           else
             alert("Type something you moron...")

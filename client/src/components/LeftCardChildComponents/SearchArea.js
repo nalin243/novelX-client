@@ -6,6 +6,8 @@ import {motion} from "framer-motion"
 
 function SearchArea(props){
 
+	if(!props.searchLoading){
+
 	const searchResult = props.searchResult.items
 	const cards = []	
 
@@ -39,6 +41,27 @@ function SearchArea(props){
 			<Library leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} cards={cards} />
 			</motion.div>
 		)
+	}
+
+	return (
+		<motion.div initial={
+			{
+				borderRadius:"0.6%",
+				scale:1,
+				opacity:0
+			}
+		} 
+		animate={props.leftCardAnimation}
+		transition={
+			{
+				scale:{duration:0.6},
+				type:"spring"
+			}
+		} class="flex flex-wrap overflow-y-auto justify-left h-inherit w-full m-1" >	
+			<img class=" h-40 w-40 m-auto" src="https://c.tenor.com/5o2p0tH5LFQAAAAi/hug.gif" />
+			</motion.div>
+		)
+
 }
 
 export default SearchArea

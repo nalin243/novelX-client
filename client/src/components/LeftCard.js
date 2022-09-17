@@ -14,7 +14,7 @@ function LeftCard(props){
 	
 	childComponents.set("MyLibrary",(<Library leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} cards={[]} library={true}/>))
 	childComponents.set("MyProfile",(<MyProfile leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation}/>))
-	childComponents.set("Search Area",(<SearchArea leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} searchResult={props.searchResult}/>))
+	childComponents.set("Search Area",(<SearchArea updateSearchLoading={props.updateSearchLoading} searchLoading={props.searchLoading} leftCardAnimation={props.leftCardAnimation} updateLeftCardAnimation={props.updateLeftCardAnimation} searchResult={props.searchResult}/>))
 
 	return (
 		<div 
