@@ -17,7 +17,7 @@ function Signup(props){
 	const username = document.querySelector("#username").value
 	const password = document.querySelector("#password").value
 
-	axios.post("http://localhost:3001/signup",{username:username,password:password})
+	axios.post(process.env.REACT_APP_SERVER_URL+"signup",{username:username,password:password})
 		.then((response)=>{
 			if(response.data.status === 200){
 				goTo("/login")

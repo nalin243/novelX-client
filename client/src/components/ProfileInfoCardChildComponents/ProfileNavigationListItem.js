@@ -40,7 +40,7 @@ function ProfileNavigationListItem(props){
 		}
 		onClick={()=>{
 			if(props.id === "SignOut"){
-				axios.get("http://localhost:3001/signout").then((response)=>{
+				axios.get(process.env.REACT_APP_SERVER_URL+"signout").then((response)=>{
 					if(response.data.status)
 						goTo("/authcheck")
 				})

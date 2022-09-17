@@ -35,7 +35,7 @@ function SearchModal(props) {
 			book: Book
 		}
 
-		axios.post("http://localhost:3001/updateLibrary",data)
+		axios.post(process.env.REACT_APP_SERVER_URL+"updateLibrary",data)
 	}	
 
 

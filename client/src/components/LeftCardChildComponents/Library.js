@@ -23,7 +23,7 @@ function Library(props){
 		const username = query.get("user")
 
 		useEffect(()=>{//after component has mounted and displayed loading state then fetch data from api
-			axios.post("http://localhost:3001/getlibrary",{username: username})
+			axios.post(process.env.REACT_APP_SERVER_URL+"getlibrary",{username: username})
 				.then((response)=>{
 					updateLib(response.data.Library)
 					updateLoadingState(false)

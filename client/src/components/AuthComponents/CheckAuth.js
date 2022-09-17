@@ -13,7 +13,8 @@ function CheckAuth(props){
 	}
 
 	useEffect(()=>{
-		axios.get("http://localhost:3001/checkauth").then((response)=>{
+
+		axios.get(process.env.REACT_APP_SERVER_URL+"checkauth").then((response)=>{
 			console.log(`User authentication status: ${response.data.authenticated}`)
 			if(response.data.authenticated){
 				goTo("/home?user="+response.data.user.name)

@@ -9,7 +9,7 @@ function LibraryModal(props) {
 
 	function handleDelete(){
 		document.querySelector(`#i${props.book._id}`).classList.add("hidden")
-		axios.post("http://localhost:3001/deletebook",{username: username,bookname: props.bookname})
+		axios.post(process.env.REACT_APP_SERVER_URL+"deletebook",{username: username,bookname: props.bookname})
 	}
 
 	return (
