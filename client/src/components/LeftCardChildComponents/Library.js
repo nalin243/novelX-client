@@ -36,7 +36,7 @@ function Library(props){
 
 		if(!loadingState){//if not in loading state then push library data to display
 			for(let i=0;i<lib.length;i++){
-				props.cards.push(<BookCard libraryModal={true} idno={i} imagesrc={lib[i].Cover} bookname={lib[i].name} />)
+				props.cards.push(<BookCard libraryModal={true} idno={i} book={lib[i]} imagesrc={lib[i].Cover} bookname={lib[i].name} />)
 			}
 			return (
 				<motion.div initial={
