@@ -19,9 +19,10 @@ function MyProfile(props){
 				scale:{duration:0.6},
 				type:"spring"
 			}
-		} class="flex flex-row flex-wrap h-inherit w-full m-1 overflow-y-scroll">
-			<UserImage />
+		} class="flex flex-row flex-wrap ml-10 h-inherit w-full m-1 overflow-y-scroll">
 			<UserStats />
+			<UserImage />
+			
 		</motion.div>
 		)
 }

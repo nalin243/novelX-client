@@ -27,7 +27,7 @@ function Signup(props){
 
 	return (
 			<div class="flex flex-col justify-center h-screen bg-gray-400">
-				<div class="flex justify-center h-5/6 w-1/2 mr-auto ml-auto">
+				<div class="flex justify-center sm:h-1 sm:w-1/6 h-5/6 w-1/2 mr-auto ml-auto">
 					<div class="flex flex-col rounded-lg bg-black justify-center m-auto border-2 border-gray-500 p-40">
 						<div>
 						<h3 class="text-white text-center -mt-20 text-3xl" >Signup</h3>

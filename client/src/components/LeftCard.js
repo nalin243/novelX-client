@@ -18,7 +18,7 @@ function LeftCard(props){
 
 	return (
 		<div 
-		class="flex flex-3 bg-black justify-center w-3/4 h-4/6 md:h-4/6 xl:h-5/6 mb-10  mr-auto mr-1 ml-6 mt-12 overflow rounded-lg border-2 border-gray-300 shadow-slate-500 shadow-2xl drop-shadow-3xl">
+		class="flex flex-3  bg-black border-2 justify-center w-3/4 h-4/6 md:h-4/6 xl:h-5/6 mb-10 sm:my-auto xl:ml-auto sm:mx-16 xl:mr-4 xl:ml-6 mt-11 overflow rounded-lg border-2 border-gray-300 shadow-slate-500 shadow-2xl drop-shadow-3xl">
 			{
 				childComponents.get(props.display)
 			}

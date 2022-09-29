@@ -10,11 +10,16 @@ function ProfileNavigationCard(props){
 		listitems.push(<ProfileNavigationListItem updateSearchLoading={props.updateSearchLoading} updateLeftCardAnimation={props.updateLeftCardAnimation} iconsrc={imgsrcs[i]} updateDisplay={props.updateDisplay}id={contents[i]} content={contents[i]}/>)
 	}
 	return (
-		<div  class="lg:flex-2 flex-1 h-4/6 md:h-4/6 xl:h-5/6 mb-10 w-1/5 ml-auto ml-1 mr-6 mt-12 rounded rounded-lg overflow-y-auto w-full lg:block lg:w-auto border-2 border-gray-300 shadow-slate-700 shadow-2xl drop-shadow-3xl">
+
+		<div  class="lg:flex-2 flex-1 h-4/6 md:h-4/6 xl:h-5/6 mb-10 w-1/5 mr-auto mr-1 ml-6 mt-16 rounded rounded-lg overflow-y-auto w-full lg:block lg:w-auto border-2 border-gray-300 shadow-slate-700 shadow-2xl drop-shadow-3xl">
 			{/*<div class="m-40">
 			</div>*/}
+			 <button data-collapse-toggle="sidebar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+			      <span class="sr-only">Open main menu</span>
+			      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+		    </button>
+			<div id="sidebar-default" class="text-right md:mr-4 sm:invisible md:visible ">
 
-			<div class="text-right mr-4">
 			<div  class="mt-10">
 				<h1 class="font-serif text-center underline text-5xl">{props.username}</h1>
 			</div>
@@ -23,6 +28,7 @@ function ProfileNavigationCard(props){
 						return item
 					})}
 				</ul>
+			
 			</div>
 
 		</div>

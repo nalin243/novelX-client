@@ -20,9 +20,9 @@ function Home(props){
 
 		<div>
 		<Navbar updateSearchLoading={updateSearchLoading} location={"home"}updateLeftCardAnimation={updateLeftCardAnimation} updateSearchResult={updateSearchResult} updateDisplay={updateDisplayItem} name={props.name}/>
-			<div class="flex flex-row mt-auto mb-auto h-screen">
-				<LeftCard updateSearchLoading={updateSearchLoading} searchLoading={searchLoading} leftCardAnimation={leftCardAnimation} updateLeftCardAnimation={updateLeftCardAnimation} searchResult={searchResult} display={displayItem}/>
+			<div class="flex xl:flex-row md:flex-row sm:flex-col flex-row mt-auto mb-auto h-screen">
 				<ProfileNavigationCard  updateSearchLoading={updateSearchLoading} updateLeftCardAnimation={updateLeftCardAnimation} updateDisplay={updateDisplayItem} username={"nalin"}/>
+				<LeftCard updateSearchLoading={updateSearchLoading} searchLoading={searchLoading} leftCardAnimation={leftCardAnimation} updateLeftCardAnimation={updateLeftCardAnimation} searchResult={searchResult} display={displayItem}/>
 			</div>
 			<Footer name={props.name}/>
 		</div>

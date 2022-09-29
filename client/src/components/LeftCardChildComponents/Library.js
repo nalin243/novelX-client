@@ -52,7 +52,7 @@ function Library(props){
 						scale:{duration:0.6},
 						type:"spring"
 					}
-				} class="flex flex-wrap  justify-left h-inherit w-full m-10">
+				} class="flex flex-wrap justify-right overflow-y-auto h-inherit w-full m-10">
 					{
 						props.cards
 					}
@@ -74,7 +74,7 @@ function Library(props){
 					scale:{duration:0.6},
 					type:"spring"
 				}
-			} class="flex flex-wrap  justify-center h-inherit w-full m-10">
+			} class="flex flex-wrap justify-center h-inherit w-full m-10">
 				<img class="h-40 w-40 m-auto" src="https://c.tenor.com/5o2p0tH5LFQAAAAi/hug.gif" />
 
 			</motion.div>
@@ -96,7 +96,7 @@ function Library(props){
 						scale:{duration:0.6},
 						type:"spring"
 					}
-				} class="flex flex-wrap  justify-left h-inherit w-full m-10">
+				} class="flex flex-wrap  justify-right h-inherit w-full m-10">
 					{
 						props.cards
 					}
