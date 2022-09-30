@@ -23,7 +23,7 @@ function BookCard(props){
 	function handleReadUpdation(read){
 		props.book.Read = !(read)
 		updateReadStatus(!(read))
-		axios.post(process.env.REACT_APP_SERVER_URL+"updatebook",{username: username, updatedBook: props.book})
+		axios.put(process.env.REACT_APP_SERVER_URL+"updatebook",{username: username, updatedBook: props.book})
 	}
 
 	//console.log(props.libraryModal)

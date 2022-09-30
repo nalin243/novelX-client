@@ -35,7 +35,7 @@ function SearchModal(props) {
 			book: Book
 		}
 
-		axios.post(process.env.REACT_APP_SERVER_URL+"updateLibrary",data)
+		axios.put(process.env.REACT_APP_SERVER_URL+"updateLibrary",data)
 	}	
 
 

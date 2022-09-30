@@ -24,10 +24,12 @@ function UserStats(props) {
 	}
 
 	useEffect(()=>{
-		axios.post(process.env.REACT_APP_SERVER_URL+"getLibrary",{username, username})
+		axios.get(process.env.REACT_APP_SERVER_URL+"getLibrary?username="+username)
 			.then((response)=>{
-				updateBookCount(response.data.Library.length)
-				updateReadCount(getReadCount(response.data.Library))
+				if(response.data.Library !== null){
+					updateBookCount(response.data.Library.length)
+					updateReadCount(getReadCount(response.data.Library))
+				}
 				updateLoadingState(false)
 			})
 	},[])
